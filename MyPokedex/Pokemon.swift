@@ -114,24 +114,7 @@ class Pokemon {
             print(response.result.value)
             if let dict = response.result.value as? Dictionary<String, AnyObject>{
                 
-                if let name = dict["name"] as? String {
-                    self._name = name
-                }
-                if let height = dict["height"] as? String{
-                    self._height = height
-                }
-                
-                if let weight = dict["weight"] as? String{
-                    self._weight = weight
-                }
-                
-                if let attack = dict["attack"] as? Int{
-                    self._attack = "\(attack)"
-                }
-                
-                if let defense = dict["defense"] as? Int{
-                    self._defense = "\(defense)"
-                }
+                self.DLStat(dict: dict)
                 
                 if let descriptions = dict["descriptions"] as? [Dictionary<String, AnyObject>]  {
                     if let urldescription = descriptions[0]["resource_uri"] as? String {
@@ -148,28 +131,12 @@ class Pokemon {
                 }
                 
                 if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] , evolutions.count > 0 {
-                    if let level = evolutions[0]["level"] as? Int {
-                            self._LevelEvolution = "\(level)"
-                    }
-                    
-                    if let nameEvolution = evolutions[0]["to"] as? String {
-                        if nameEvolution.contains("mega") == false {
-                            self._nextEvolution = nameEvolution
-                        }
-                    }
-                    
-                    if let idEvolution = evolutions[0]["resource_uri"] as? String {
-                        let parseString = idEvolution.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
-                        let idString = parseString.replacingOccurrences(of: "/", with: "")
-                        
-                        self._idNextEvolution = idString
-                    }
+                    self.DlEvolution(evolutions: evolutions)
                 }
                 
                 if let types = dict["types"] as? [Dictionary<String, AnyObject>], types.count > 0 {
                     var fulltype = ""
                     for type in types {
-                        
                         if let nametype = type["name"] as? String {
                             fulltype += "\(nametype)/"
                         }
@@ -182,6 +149,48 @@ class Pokemon {
             completed()
         }
         
+    }
+    
+    func DlEvolution(evolutions: [Dictionary<String, AnyObject>]) {
+            if let level = evolutions[0]["level"] as? Int {
+                self._LevelEvolution = "\(level)"
+            }
+            
+            if let nameEvolution = evolutions[0]["to"] as? String {
+                if nameEvolution.contains("mega") == false {
+                    self._nextEvolution = nameEvolution
+                }
+            }
+            
+            if let idEvolution = evolutions[0]["resource_uri"] as? String {
+                let parseString = idEvolution.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                let idString = parseString.replacingOccurrences(of: "/", with: "")
+                
+                self._idNextEvolution = idString
+            }
+    }
+    
+    
+    func DLStat(dict: Dictionary<String, AnyObject>) {
+        if let name = dict["name"] as? String {
+            self._name = name
+        }
+        if let height = dict["height"] as? String{
+            self._height = height
+        }
+        
+        if let weight = dict["weight"] as? String{
+            self._weight = weight
+        }
+        
+        if let attack = dict["attack"] as? Int{
+            self._attack = "\(attack)"
+        }
+        
+        if let defense = dict["defense"] as? Int{
+            self._defense = "\(defense)"
+        }
+
     }
     
     

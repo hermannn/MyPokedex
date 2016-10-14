@@ -42,7 +42,9 @@ class PokemonDetailViewController: UIViewController {
         if (pokemon!.nextEvolution != ""){
             self.levelEvolution.text = "Next Evolution \(pokemon!.nextEvolution) : LVL \(pokemon!.LevelEvolution)"
             self.imageEvolutionPokemon.image = UIImage(named: pokemon!.idNextEvolution)
+            self.imageEvolutionPokemon.isHidden = false
         }else{
+            self.imageEvolutionPokemon.isHidden = true
             self.levelEvolution.text = "No Evolution"
         }
         self.namePokemon.text = pokemon?.name

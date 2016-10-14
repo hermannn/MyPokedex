@@ -60,8 +60,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let pokemonpick = pokemons[indexPath.item]
+        var pokemonpick:Pokemon!
         
+        if (inSearchMode == false){
+            pokemonpick = pokemons[indexPath.row]
+        }else{
+            pokemonpick = filteredPokemon[indexPath.row]
+        }
         performSegue(withIdentifier: "PokemonDetail", sender: pokemonpick)
     }
     

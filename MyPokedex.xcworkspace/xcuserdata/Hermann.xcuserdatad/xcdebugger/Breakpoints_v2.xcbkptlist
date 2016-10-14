@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyPokedex/PokemonDetailViewController.swift"
-            timestampString = "498097707.67988"
+            timestampString = "498143204.293148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "updateUI()"
             landmarkType = "7">
          </BreakpointContent>

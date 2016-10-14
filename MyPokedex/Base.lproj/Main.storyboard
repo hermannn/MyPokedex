@@ -194,20 +194,15 @@
                                     <constraint firstItem="QE4-zp-aMw" firstAttribute="centerX" secondItem="YuZ-mQ-gWA" secondAttribute="centerX" id="pdV-lv-GnA"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mt8-sN-bB0">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mt8-sN-bB0">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vpC-ku-k1L">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="BSf-b9-ZXJ">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="250"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="120" id="hJy-TL-IV5">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="250"/>
-                                            </constraint>
-                                        </constraints>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vpC-ku-k1L"/>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-XN-zQG"/>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="8u0-Fb-ZnR"/>
+                                    <constraint firstAttribute="width" constant="333" id="Xvd-o4-UQ9"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-Fd-7O4">
                                 <subviews>
@@ -401,11 +396,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Mt8-sN-bB0" firstAttribute="centerX" secondItem="K53-20-2Sc" secondAttribute="centerX" id="91c-Bk-V41"/>
                             <constraint firstAttribute="trailing" secondItem="T0R-jb-pXc" secondAttribute="trailing" id="BXa-xf-mda"/>
                             <constraint firstItem="Zz5-HJ-L4T" firstAttribute="top" secondItem="Mt8-sN-bB0" secondAttribute="bottom" constant="20" id="Qcp-di-i7f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IwQ-Fd-7O4" secondAttribute="trailing" id="UuD-rY-pko"/>
                             <constraint firstItem="IwQ-Fd-7O4" firstAttribute="leading" secondItem="K53-20-2Sc" secondAttribute="leadingMargin" id="Y9m-d0-brk"/>
-                            <constraint firstItem="Mt8-sN-bB0" firstAttribute="centerX" secondItem="K53-20-2Sc" secondAttribute="centerX" id="YsO-tL-kdw"/>
                             <constraint firstItem="Mt8-sN-bB0" firstAttribute="top" secondItem="YuZ-mQ-gWA" secondAttribute="bottom" constant="20" id="chm-4L-EDs"/>
                             <constraint firstAttribute="trailing" secondItem="YuZ-mQ-gWA" secondAttribute="trailing" id="eUa-ee-L5F"/>
                             <constraint firstItem="YuZ-mQ-gWA" firstAttribute="leading" secondItem="K53-20-2Sc" secondAttribute="leading" id="hEi-tF-d2t"/>
